@@ -1,201 +1,47 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-.pytest_cache/
-.coverage
-.hypothesis/
-.tox/
-.nox/
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-.mypy_cache/
-.dmypy.json
-dmypy.json
-.pyre/
-.pytype/
-.ruff_cache/
-pdm.lock
-.pdm.toml
-__pypackages__/
-celerybeat-schedule
-celerybeat.pid
-*.sage.py
-.env
-.env.*
-!.env.sample
-.spyderproject
-.spyproject
-.ropeproject
-instance/
-.webassets-cache
-.scrapy
-docs/_build/
-target/
-profile_default/
-ipython_config.py
-.python-version
-pipenv.lock
-Pipfile.lock
-poetry.lock
-poetry.toml
-
-# TypeScript / JavaScript / Node
+# Dependencies
 node_modules/
+*/node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 lerna-debug.log*
-.pnpm-debug.log*
-*.tsbuildinfo
-.npm
-.eslintcache
-.stylelintcache
-.yarn-integrity
-.cache
-.parcel-cache
-.next/
-out/
-.nuxt/
-dist/
-.cache/
-.vuepress/dist
-.temp
-.docusaurus
-.serverless/
-.fusebox/
-.dynamodb/
-.tern-port
-.vscode-test
-*.pid
-*.seed
-*.pid.lock
-lib-cov
-coverage
-.nyc_output
-.grunt
-bower_components
-.lock-wscript
-jspm_packages/
-typings/
-*.log
-logs/
-!logs/.gitkeep
-report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
-.DS_Store
-Thumbs.db
 
-# Bun
-bun.lockb
-.bun/
-
-# Vue.js
-.DS_Store
-node_modules/
-/dist/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-/test/unit/coverage/
-/test/e2e/reports/
-selenium-debug.log
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# Environment files
+.env
 .env.local
 .env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# IDEs and editors
-.idea/
+# IDE
 .vscode/
+.idea/
 *.swp
 *.swo
 *~
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-.history
-
-# OS
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-*.bak
-
-# Testing
-coverage/
-.nyc_output/
-*.lcov
-.coverage
-htmlcov/
-.pytest_cache/
-.phpunit.result.cache
 
 # Build outputs
 dist/
 build/
 out/
-target/
-*.min.js
-*.min.css
+*.tsbuildinfo
+.next/
+.nuxt/
+.cache/
 
-# Temporary files
-*.tmp
-*.temp
-.tmp/
-.temp/
-tmp/
-temp/
-
-# Package files
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+# Testing
+coverage/
+*.lcov
+.nyc_output/
 
 # Database
 *.sqlite
 *.sqlite3
 *.db
-*.db-shm
-*.db-wal
+prisma/migrations/dev/
 
 # Server database files
 apps/server/events.db
@@ -205,44 +51,79 @@ apps/server/observability.db
 apps/server/observability.db-shm
 apps/server/observability.db-wal
 
-# Logs (but preserve logs directory structure)
-logs/*
-!logs/.gitkeep
+# Logs
+logs/
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Security
-.env
-.env.*
-!.env.sample
-*.key
-*.pem
-*.p12
-*.pfx
-secrets/
-credentials/
+# Docker
+docker-compose.override.yml
+.dockerignore.local
 
-# Dependency directories
-vendor/
-packages/
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
 
-# Output directories
-output/
-outputs/
-results/
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+.temp/
+tmp/
+temp/
 
-# Cache directories
-.cache/
-.sass-cache/
-.parcel-cache/
+# MCP/Claude Code
+mcp_data/
+!.claude/
 
-# Misc
-*.bak
+# Planning directories (for Claude development reference)
+planning/
+*/planning/
+**/planning/
+
+# Redis
+dump.rdb
+
+# Backup files
 *.backup
+*.bak
 *.old
-.history/
-.svn/
-CVS/
-claude-output.json
-.claude/commands/feature.md
 
-specs/
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.sublime-project
+*.sublime-workspace
+
+# Python (if you add any Python scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+
+# Test output
+test-results/
+playwright-report/
+playwright/.cache/
+.playwright-mcp/
+
+# Package lock files (commented out to enable CI/CD reliability)
+# package-lock.json
+# */package-lock.json
+# **/package-lock.json
+# yarn.lock
+# */yarn.lock
+# **/yarn.lock
+# pnpm-lock.yaml
+# */pnpm-lock.yaml
+# **/pnpm-lock.yaml
+.vercel
