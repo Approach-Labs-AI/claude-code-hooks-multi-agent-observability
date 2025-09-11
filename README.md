@@ -1,5 +1,7 @@
 # Multi-Agent Observability System
 
+> **Note**: This repository is forked from [disler/claude-code-hooks-multi-agent-observability](https://github.com/disler/claude-code-hooks-multi-agent-observability). All original credit goes to the original authors.
+
 Real-time monitoring and visualization for Claude Code agents through comprehensive hook event tracking. You can watch the [full breakdown here](https://youtu.be/9ijnN985O_c).
 
 ## 🎯 Overview
