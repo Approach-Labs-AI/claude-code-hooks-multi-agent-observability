@@ -10,7 +10,7 @@
           },
           {
             "type": "command",
-            "command": "uv run .claude/hooks/send_event.py --source-app cc-hook-multi-agent-obvs --event-type PreToolUse --summarize"
+            "command": "uv run .claude/hooks/send_event.py --source-app cc-hook-multi-agent-obvs --event-type PreToolUse --add-chat --summarize"
           }
         ]
       }
@@ -25,7 +25,7 @@
           },
           {
             "type": "command",
-            "command": "uv run .claude/hooks/send_event.py --source-app cc-hook-multi-agent-obvs --event-type PostToolUse --summarize"
+            "command": "uv run .claude/hooks/send_event.py --source-app cc-hook-multi-agent-obvs --event-type PostToolUse --add-chat --summarize"
           }
         ]
       }
@@ -37,6 +37,10 @@
           {
             "type": "command",
             "command": "uv run .claude/hooks/notification.py --notify "
+          },
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/simple_notification.py"
           },
           {
             "type": "command",
@@ -52,6 +56,10 @@
           {
             "type": "command",
             "command": "uv run .claude/hooks/stop.py --chat"
+          },
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/extract_response.py"
           },
           {
             "type": "command",
@@ -81,7 +89,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run .claude/hooks/send_event.py --source-app cc-hook-multi-agent-obvs --event-type PreCompact"
+            "command": "uv run .claude/hooks/send_event.py --source-app cc-hook-multi-agent-obvs --event-type PreCompact --add-chat"
           }
         ]
       }

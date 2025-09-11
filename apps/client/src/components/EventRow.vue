@@ -184,7 +184,8 @@ const hookEmoji = computed(() => {
     'Stop': '🛑',
     'SubagentStop': '👥',
     'PreCompact': '📦',
-    'UserPromptSubmit': '💬'
+    'UserPromptSubmit': '💬',
+    'AgentResponse': '💭'
   };
   return emojiMap[props.event.hook_event_type] || '❓';
 });
@@ -214,6 +215,14 @@ const formattedPayload = computed(() => {
 
 const toolInfo = computed(() => {
   const payload = props.event.payload;
+  
+  // Handle AgentResponse events
+  if (props.event.hook_event_type === 'AgentResponse' && payload.final_response) {
+    return {
+      tool: 'Agent Response:',
+      detail: `"${payload.final_response.slice(0, 150)}${payload.final_response.length > 150 ? '...' : ''}"`
+    };
+  }
   
   // Handle UserPromptSubmit events
   if (props.event.hook_event_type === 'UserPromptSubmit' && payload.prompt) {
